@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="tustar">
+<head>
+    <meta charset="UTF-8">
+    <title>TUSTAR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 header">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">TUSTAR</a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">消息</a></li>
+                            <li uib-dropdown>
+                                <a href uib-dropdown-toggle> 我的账户 <span class="caret"></span></a>
+                                <ul class="dropdown-menu" uib-dropdown-menu>
+                                    <li><a href>修改密码</a></li>
+                                    <li><a href>我的账户</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href>安全退出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 sidebar" ng-controller="SidebarCtrl">
+                <ul class="nav nav-sidebar">
+                    <li ng-repeat="menu in menuList">
+                        <a href="{{ menu.link }}">
+                            <span class="glyphicon glyphicon-menu-right"></span> {{ menu.name }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-10 main">
+                <div ng-controller="demo">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model="a">
+                        </div>
+                    {{ a }}
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 footer text-center">
+                <hr>
+                &copy;TUST 2016, Tianjin University of Science &amp; Technology
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+</body>
+</html>
