@@ -17,7 +17,7 @@
                             <a class="navbar-brand" href="#">TUSTAR</a>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">消息</a></li>
+                            <li><a href="#"> 消息 <span class="badge">42</span></a></li>
                             <li uib-dropdown>
                                 <a href uib-dropdown-toggle> 我的账户 <span class="caret"></span></a>
                                 <ul class="dropdown-menu" uib-dropdown-menu>
@@ -39,6 +39,11 @@
                         <a href="{{ menu.link }}">
                             <span class="glyphicon glyphicon-menu-right"></span> {{ menu.name }}
                         </a>
+                        <ul>
+                            <li><a href="#">XX</a></li>
+                            <li><a href="#">XX</a></li>
+                            <li><a href="#">XX</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -47,7 +52,7 @@
                     <form class="form-inline">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model="a">
+                            <input type="text" class="form-control"  placeholder="Email" ng-model="a">
                         </div>
                     {{ a }}
                     </form>
