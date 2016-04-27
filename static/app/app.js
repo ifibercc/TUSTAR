@@ -4,20 +4,47 @@ var tustar = angular.module('tustar', [
 
 ]);
 
-tustar.controller('SidebarCtrl', ['$scope', function($scope){
+tustar.controller('SidebarCtrl', ['$scope', function($scope) {
 
     $scope.menuList = [{
-        link: 'www.baidu.com',
-        name: 'baidu'
+        name: 'baidu',
+        child: [{
+            link: 'www.baidu.com',
+            name: 'baidu'
+        }, {
+            link: 'www.sina.com',
+            name: 'sina'
+        }, {
+            link: 'www.tecent.com',
+            name: 'tecent'
+        }]
     }, {
-        link: 'www.sina.com',
-        name: 'sina'
+        name: 'sina',
+        child: [{
+            link: 'www.baidu.com',
+            name: 'baidu'
+        }, {
+            link: 'www.sina.com',
+            name: 'sina'
+        }, {
+            link: 'www.tecent.com',
+            name: 'tecent'
+        }]
     }, {
-        link: 'www.tecent.com',
-        name: 'tecent'
+        name: 'techent',
+        child: [{
+            link: 'www.baidu.com',
+            name: 'baidu'
+        }, {
+            link: 'www.sina.com',
+            name: 'sina'
+        }, {
+            link: 'www.tecent.com',
+            name: 'tecent'
+        }]
     }];
 }]);
 
-tustar.controller('demo', ['$scope', function($scope){
+tustar.controller('demo', ['$scope', function($scope) {
     $scope.a = 111;
 }]);
