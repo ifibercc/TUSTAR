@@ -46,8 +46,6 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -62,36 +60,140 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var SubMenu = _antd.Menu.SubMenu;
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var App = function (_Component) {
-	    _inherits(App, _Component);
-
-	    function App() {
-	        _classCallCheck(this, App);
-
-	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	    }
-
-	    _createClass(App, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
+	var AsideCollapse = _react2.default.createClass({
+	    displayName: 'AsideCollapse',
+	    getInitialState: function getInitialState() {
+	        return {
+	            collapse: true
+	        };
+	    },
+	    onCollapseChange: function onCollapseChange() {
+	        this.setState({
+	            collapse: !this.state.collapse
+	        });
+	    },
+	    render: function render() {
+	        var collapse = this.state.collapse;
+	        return _react2.default.createElement(
+	            'div',
+	            { className: collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside" },
+	            _react2.default.createElement(
+	                'aside',
+	                { className: 'ant-layout-sider' },
+	                _react2.default.createElement('div', { className: 'ant-layout-logo' }),
+	                _react2.default.createElement(
+	                    _antd.Menu,
+	                    { mode: 'inline', theme: 'dark', defaultSelectedKeys: ['user'] },
+	                    _react2.default.createElement(
+	                        _antd.Menu.Item,
+	                        { key: 'user' },
+	                        _react2.default.createElement(_antd.Icon, { type: 'user' }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'nav-text' },
+	                            '导航一'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _antd.Menu.Item,
+	                        { key: 'setting' },
+	                        _react2.default.createElement(_antd.Icon, { type: 'setting' }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'nav-text' },
+	                            '导航二'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _antd.Menu.Item,
+	                        { key: 'laptop' },
+	                        _react2.default.createElement(_antd.Icon, { type: 'laptop' }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'nav-text' },
+	                            '导航三'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _antd.Menu.Item,
+	                        { key: 'notification' },
+	                        _react2.default.createElement(_antd.Icon, { type: 'notification' }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'nav-text' },
+	                            '导航四'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _antd.Menu.Item,
+	                        { key: 'folder' },
+	                        _react2.default.createElement(_antd.Icon, { type: 'folder' }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'nav-text' },
+	                            '导航五'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'ant-aside-action', onClick: this.onCollapseChange },
+	                    collapse ? _react2.default.createElement(_antd.Icon, { type: 'right' }) : _react2.default.createElement(_antd.Icon, { type: 'left' })
+	                )
+	            ),
+	            _react2.default.createElement(
 	                'div',
-	                null,
-	                'test'
-	            );
-	        }
-	    }]);
+	                { className: 'ant-layout-main' },
+	                _react2.default.createElement('div', { className: 'ant-layout-header' }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'ant-layout-breadcrumb' },
+	                    _react2.default.createElement(
+	                        _antd.Breadcrumb,
+	                        null,
+	                        _react2.default.createElement(
+	                            _antd.Breadcrumb.Item,
+	                            null,
+	                            '首页'
+	                        ),
+	                        _react2.default.createElement(
+	                            _antd.Breadcrumb.Item,
+	                            null,
+	                            '应用列表'
+	                        ),
+	                        _react2.default.createElement(
+	                            _antd.Breadcrumb.Item,
+	                            null,
+	                            '某应用'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'ant-layout-container' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'ant-layout-content' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { style: { height: 220 } },
+	                            '内容区域'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'ant-layout-footer' },
+	                    'Ant Design 版权所有 © 2015 由蚂蚁金服体验技术部支持'
+	                )
+	            )
+	        );
+	    }
+	});
 
-	    return App;
-	}(_react.Component);
-
-	_reactDom2.default.render(_react2.default.createElement(_antd.DatePicker, null), document.getElementById('test'));
+	_reactDom2.default.render(_react2.default.createElement(AsideCollapse, null), document.getElementById('test'));
 
 /***/ },
 /* 1 */
@@ -21479,7 +21581,7 @@
 	exports.i(__webpack_require__(175), "");
 
 	// module
-	exports.push([module.id, "\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\n.ant-layout-aside {\n  position: relative;\n  min-height: 100%; }\n\n.ant-layout-aside .ant-layout-logo {\n  width: 150px;\n  height: 32px;\n  background: #333;\n  border-radius: 6px;\n  margin: 16px 24px 16px 28px;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside-collapse .ant-layout-logo {\n  width: 32px;\n  margin: 16px;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside .ant-layout-sider {\n  width: 224px;\n  background: #404040;\n  position: absolute;\n  overflow: visible;\n  padding-bottom: 24px;\n  height: 100%;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside-collapse .ant-layout-sider {\n  width: 64px;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside .ant-layout-sider > .ant-menu {\n  margin-bottom: 20px; }\n\n.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item {\n  margin: 16px 0; }\n\n.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item .nav-text {\n  vertical-align: baseline;\n  display: inline-block; }\n\n.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item > .anticon {\n  transition: font-size .3s; }\n\n.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item {\n  transition: all 0s ease; }\n\n.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item > .anticon {\n  font-size: 16px;\n  display: inline-block; }\n\n.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item .nav-text {\n  display: none; }\n\n.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item:hover {\n  background: #2db7f5;\n  color: #fff;\n  transition: all 0s ease; }\n\n.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item:hover .nav-text {\n  display: inline-block;\n  vertical-align: top;\n  background: #2db7f5;\n  color: #fff;\n  padding-right: 16px;\n  border-radius: 0 5px 5px 0; }\n\n/* 实际使用中需要改成 position: fixed */\n.ant-layout-aside .ant-aside-action {\n  height: 42px;\n  width: 224px;\n  position: absolute;\n  bottom: 0;\n  background: #656565;\n  color: #fff;\n  text-align: center;\n  line-height: 42px;\n  cursor: pointer;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside-collapse .ant-aside-action {\n  width: 64px;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside .ant-layout-header {\n  background: #fff;\n  height: 64px;\n  border-bottom: 1px solid #e9e9e9; }\n\n.ant-layout-aside .ant-layout-breadcrumb {\n  margin: 7px 0 -17px 24px; }\n\n.ant-layout-aside .ant-layout-main {\n  margin-left: 224px;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside-collapse .ant-layout-main {\n  margin-left: 64px;\n  transition: all 0.3s ease; }\n\n.ant-layout-aside .ant-layout-container {\n  margin: 24px 16px; }\n\n.ant-layout-aside .ant-layout-content {\n  background: #fff;\n  padding: 24px; }\n\n.ant-layout-aside .ant-layout-footer {\n  height: 64px;\n  line-height: 64px;\n  text-align: center;\n  font-size: 12px;\n  color: #999;\n  background: #fff;\n  border-top: 1px solid #e9e9e9;\n  width: 100%; }\n", ""]);
 
 	// exports
 
