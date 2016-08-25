@@ -1,2 +1,11 @@
 # TUSTAR
-A project which own worked together.
+## workflow
+- MongoDB
+- Express
+- React
+- Redux
+- Rexxxxx
+- antd
+- Webpack
+- Babel
+- ES2015
