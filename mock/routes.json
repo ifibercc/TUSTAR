@@ -1,0 +1,7 @@
+{
+  "/api/organization": "/apiOrganization",
+  "/api/organizations": "/apiOrganizations",
+  "/api/organizeTree":"/apiOrganizeTree",
+  "/api/userList":"/apiUserList",
+  "/mock/bsuser":"/apiUserList"
+}

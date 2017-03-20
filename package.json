@@ -1,31 +1,37 @@
 {
-  "name": "TUSTAR",
-  "version": "0.0.0",
+  "name": "tustar",
+  "description": "A Vue.js project",
+  "author": "ifibercc@gmail.com",
   "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "mock": "json-server --watch ./mock/mock.json --routes ./mock/routes.json -p 3456"
   },
   "dependencies": {
-    "antd": "^1.10.0",
-    "body-parser": "~1.15.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "express": "~4.13.4",
-    "jade": "~1.11.0",
-    "morgan": "~1.7.0",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "serve-favicon": "~2.3.0"
+    "axios": "^0.15.3",
+    "element-ui": "^1.2.4",
+    "nprogress": "^0.2.0",
+    "vue": "^2.2.4",
+    "vue-router": "^2.3.0"
   },
   "devDependencies": {
-    "babel-core": "^6.14.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
-    "css-loader": "^0.24.0",
-    "node-sass": "^3.8.0",
-    "sass-loader": "^4.0.0",
+    "babel-core": "^6.24.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.4.1",
+    "babel-preset-es2015": "^6.13.2",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.9.0",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2"
+    "vue-loader": "^10.0.0",
+    "vue-template-compiler": "^2.2.4",
+    "webpack": "beta",
+    "webpack-dev-server": "beta"
   }
 }

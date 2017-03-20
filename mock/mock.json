@@ -1,0 +1,110 @@
+{
+  "apiOrganization": {
+    "code": 200,
+    "msg": "操作错误",
+    "data": [{
+        "label": "一级 1",
+        "children": [{
+          "label": "二级 1-2"
+        }]
+      },
+      {
+        "label": "一级 2",
+        "children": [{
+            "label": "二级 2-1"
+          },
+          {
+            "label": "二级 2-2"
+          }
+        ]
+      },
+      {
+        "label": "一级 3",
+        "children": [{
+            "label": "二级 3-1"
+          },
+          {
+            "label": "二级 3-2"
+          }
+        ]
+      }
+    ]
+  },
+  "apiOrganizations": {
+    "aaa": "cc"
+  },
+  "comments": [{
+    "id": 1,
+    "body": "some comment",
+    "postId": 1
+  }],
+  "profile": {
+    "name": "typicode"
+  },
+  "apiOrganizeTree": {
+    "code": "200",
+    "msg": "no",
+    "data": [{
+        "id": "001",
+        "name": "aaa",
+        "pId": null,
+        "type": "公司"
+      },
+      {
+        "id": "002",
+        "name": "bbb",
+        "pId": null,
+        "type": "公司"
+      },
+      {
+        "id": "003",
+        "name": "ccc",
+        "pId": "001",
+        "type": "部门"
+      },
+      {
+        "id": "004",
+        "name": "ddd",
+        "pId": "001",
+        "type": "部门"
+      },
+      {
+        "id": "005",
+        "name": "eee",
+        "pId": "002",
+        "type": "部门"
+      },
+      {
+        "id": "006",
+        "name": "fff",
+        "pId": "003",
+        "type": "部门"
+      }
+    ]
+  },
+  "apiUserList": {
+    "code": 200,
+    "msg": "成功",
+    "data": [{
+        "date": "2016-05-02",
+        "name": "王小虎",
+        "address": "上海市普陀区金沙江路 1518 "
+      },
+      {
+        "date": "2016-05-04",
+        "name": "王小虎",
+        "address": "上海市普陀区金沙江路 1517 弄"
+      },
+      {
+        "date": "2016-05-01",
+        "name": "王小虎",
+        "address": "上海市普陀区金沙江路 1519 弄"
+      },
+      {
+        "date": "2016-05-03",
+        "name": "王小虎",
+        "address": "上海市普陀区金沙江路 1516 弄"
+      }
+    ]
+  }
+}
