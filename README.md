@@ -1,4 +1,4 @@
-#tustar
+# tustar
 
 基于 vue 2.0 + ElementUI + Vue Router + axios 后台管理系统
 
@@ -130,3 +130,46 @@ server.listen(3456, function () {
 code: 整型。请求成功与否。0表示成功，其他表示失败  
 data: 任意类型。所包含的数据  
 msg: 字符串型。如果有错误，则错误的信息放置在此，否则请设置为为空或null  
+
+### 3. AJAX
+使用axios作为异步请求工具  
+已经绑定了全局的方法，并对按照接口规范的数据进行预处理，进行message的统一错误处理，并结合nprocess插件进行进度提示
+```
+this.$ajax('get', '/api/organizeTree', {a: 'test'},  function (res) {
+            console.log(res)
+});
+```
+- param1: method，第一个参数为ajax的方法，目前有"get" 和 "post"两种类型，取数据用get提交数据用post
+- param2: url，第二个参数为请求地址，按照目前的方式需要以"/api"作为前缀
+- param3: req，第三个参数为请求参数，是一个js对象，如果没有请求参数则写为"{}"空对象即可
+- param4: res，第四个参数为响应参数，传入的值是后端的返回值中的data对象，并且已经将code和msg字段去掉，进行了裁剪
+
+### 4. icon-font
+为了个性化以及打包速度，并没有引入体积庞大的awesome-font，而是使用阿里巴巴开源的icon-font  
+http://www.iconfont.cn/  
+为了首屏渲染速度，没有将本css打包进build.js中  
+所以每次图标库修改后直接替换index.html中的链接地址即可  
+`<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_558ntzswktucv7vi.css">`
+
+## 模板页面
+### 1. 基本查询
+```
+<template>
+    <div class="layout-table-simple">
+        <div class="condition">
+        </div>
+        <div class="toolbar">
+        </div>
+        <div class="grid">
+        </div>
+        <div class="pagination">
+        </div>
+        <el-dialog>
+        </el-dialog>
+    </div>
+</template>
+```
+
+### 2. 左树右表
+
+### 3. 树编辑
