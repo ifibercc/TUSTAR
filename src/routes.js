@@ -24,10 +24,18 @@ const routes = [{
     component: Function
 }, {
     path: '/example/baseQuery',
-    component: baseQuery
+    component: baseQuery,
+    name: {
+        pText: '示例页面',
+        cText: '基本查询'
+    }
 }, {
     path: '/example/treeGrid',
-    component: treeGrid
+    component: treeGrid,
+    name: {
+        pText: '示例页面',
+        cText: '左树右表'
+    }
 }, {
     path: '/example/treeEdit',
     component: treeEdit

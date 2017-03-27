@@ -1,4 +1,5 @@
 <style lang="sass">
+
 </style>
 <template>
   <div class="wrapper">
@@ -18,8 +19,8 @@
       <div class="breadcrumb">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/welcome' }"><i class="fa fa-home"></i>首页</el-breadcrumb-item>
-          <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-          <el-breadcrumb-item>用户列表</el-breadcrumb-item>
+          <el-breadcrumb-item>{{breadcrumb.pText}}</el-breadcrumb-item>
+          <el-breadcrumb-item v-if="breadcrumb.cText !== ''">{{breadcrumb.cText}}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
       <router-view></router-view>
@@ -31,7 +32,18 @@
   export default {
     data() {
       return {
-        navData: []
+        navData: [],
+        breadcrumb: {
+          pText: '',
+          cText: '',
+          cPath: ''
+        }
+      }
+    },
+    watch: {
+      $route: function () {
+        this.breadcrumb.pText = this.$route.name && this.$route.name.pText || '';
+        this.breadcrumb.cText = this.$route.name && this.$route.name.cText || '';
       }
     },
     created: function () {
@@ -45,9 +57,11 @@
         })
     },
     methods: {
-      selectMenu(atr1, atr2) {
-        console.log(atr1)
-        console.log(atr2)
+      selectMenu() {
+        // 选择菜单时修改面包屑
+        // console.log(this.$route)
+        // this.breadcrumb.pText = this.$route.name.pText;
+        // this.breadcrumb.cText = this.$route.name.cText;
       }
     }
   }
@@ -66,7 +80,7 @@
       overflow: hidden;
     }
   }
-  
+
   .wrapper {
     width: 100%;
     height: 100%;
