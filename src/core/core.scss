@@ -1,0 +1,78 @@
+@import url(//at.alicdn.com/t/font_558ntzswktucv7vi.css);
+// 单表布局
+.layout-table-simple {
+    position: absolute;
+    top: 32px;
+    bottom: 32px;
+    padding: 10px 20px;
+    width: calc(100% - 60px);
+    background: #FFF;
+    .condition {
+        border-bottom: 1px dashed #CCC;
+        margin-bottom: 10px;
+    }
+    .toolbar {
+        margin: 5px 0;
+    }
+    .grid {
+        height: calc(100% - 150px);
+    }
+    .pagination {
+        position: absolute;
+        right: 20px;
+        bottom: 5px;
+        margin: 10px -5px 0 0;
+    }
+}
+
+// 左树右表布局
+.layout-tree-grid {
+    position: absolute;
+    top: 32px;
+    bottom: 32px;
+    padding: 10px 20px;
+    width: calc(100% - 60px);
+    background: #FFF;
+    .el-row {
+        height: 100%;
+        .el-col {
+            height: 100%;
+        }
+    }
+    .condition {
+        border-bottom: 1px dashed #CCC;
+        margin-bottom: 10px;
+    }
+    .toolbar {
+        margin: 5px 0;
+    }
+    .grid {
+        height: calc(100% - 150px);
+    }
+    .pagination {
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        margin: 10px -5px 0 0;
+    }
+}
+
+// 左树右表布局
+.layout-tree-edit {
+    position: absolute;
+    top: 32px;
+    bottom: 32px;
+    padding: 10px 20px;
+    width: calc(100% - 60px);
+    background: #FFF;
+    .el-row {
+        height: 100%;
+        .el-col {
+            height: 100%;
+            .el-form {
+                height: 100%;
+                overflow: auto;
+            }
+        }
+    }
+}

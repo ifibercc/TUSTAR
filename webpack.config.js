@@ -39,8 +39,8 @@ module.exports = {
     noInfo: true,
     port: 8888,
     proxy: {
-      "/api": "http://localhost:3454",
-      "/mock": "http://localhost:3456"
+      "/api": "http://122.114.38.213:3456",
+      "/mock": "http://localhost:8888"
     }
   },
   devtool: '#eval-source-map'

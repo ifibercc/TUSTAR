@@ -36,7 +36,7 @@
                 </el-table-column>
                 <el-table-column prop="ContactTel" label="联系电话">
                 </el-table-column>
-                <el-table-column prop="RegDt" label="注册时间" width="200">
+                <el-table-column prop="RegDt" label="注册时间" :formatter="datetime">
                 </el-table-column>
                 <el-table-column prop="AccountStatus" label="用户状态">
                 </el-table-column>
@@ -44,7 +44,7 @@
                 </el-table-column>
                 <el-table-column prop="IsSysUser" label="是否系统账户">
                 </el-table-column>
-                <el-table-column prop="LoginDt" label="最后登录时间">
+                <el-table-column prop="LoginDt" label="最后登录时间" :formatter="datetime">
                 </el-table-column>
                 <el-table-column :context="_self" fixed="right" label="操作" width="120">
                     <template scope="scope">
@@ -97,6 +97,8 @@
     </div>
 </template>
 <script>
+    import moment from 'moment';
+
     export default {
         data() {
             return {
@@ -125,12 +127,23 @@
             };
         },
         methods: {
+            datetime(row, col) {
+                return moment(row.RegDt).format('YYYY-MM-DD');
+            },
             search() {
                 const me = this;
                 this.$ajax('get', '/api/bsuser/getallwithpaging', {
                     // 改写后端方法
-                    // where: 'UserName like ' + me.searchForm.UserName + ' LoginName like ' + me.searchForm.LoginName
-                    // + ' NickName like ' + me.searchForm.NickName,
+                    where: JSON.stringify([{
+                            key: 'UserName',
+                            val: me.searchForm.UserName
+                        }, {
+                            key: 'LoginName',
+                            val: me.searchForm.LoginName
+                        }, {
+                            key: 'NickName',
+                            val: me.searchForm.NickName
+                        }]),
                     currentPage: me.pagination.currentPage,
                     pageSize: me.pagination.pageSize
                 }, function (res) {
@@ -172,7 +185,7 @@
                     console.log(id)
                     this.$ajax('post', '/api/bsuser/getone', {
                         idValue: id
-                    }, function(res){
+                    }, function (res) {
                         console.log(res)
                         me.dialogForm = res;
                     });
@@ -218,4 +231,5 @@
     }
 </script>
 <style lang="sass" scoped>
+
 </style>

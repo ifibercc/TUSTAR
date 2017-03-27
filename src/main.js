@@ -8,7 +8,7 @@ import { $ajax } from './core/core.js'
 import TuTree from './components/common/tree.vue'
 import TuToolbar from './components/common/toolbar.vue'
 import 'element-ui/lib/theme-default/index.css'
-import './core/layout.scss'
+import './core/core.scss'
 
 Vue.use(VueRouter)
 Vue.use(ElementUI)

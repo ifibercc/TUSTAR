@@ -1,4 +1,4 @@
-# tustar
+# TUSTAR
 
 基于 vue 2.0 + ElementUI + Vue Router + axios 后台管理系统
 

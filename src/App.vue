@@ -23,7 +23,7 @@
         </el-breadcrumb>
       </div>
       <router-view></router-view>
-      <div class="footer">&copy;天津亲谊科技有限公司</div>
+      <div class="footer">&copy;天津XX科技有限公司</div>
     </div>
   </div>
 </template>

@@ -19,7 +19,7 @@
                             <el-input v-model="searchForm.NickName" placeholder="昵称"></el-input>
                         </el-form-item>
                         <el-form-item>
-                            <el-button type="primary" @click="search()"><i class="fa fa-search"></i> 查询</el-button>
+                            <el-button type="primary" @click="search()"><i class="tf tf-query"></i> 查询</el-button>
                         </el-form-item>
                     </el-form>
                 </div>

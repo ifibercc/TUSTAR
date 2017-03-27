@@ -1,10 +1,10 @@
 <template>
     <div class="layout-tree-edit">
         <el-row :gutter="20">
-            <el-col :span="4">
+            <el-col :span="5">
                 <tu-tree url="/api/bsOrganize/treeDis" v-on:emitId="clickNode" v-on:emitBtnAdd="addNode" btnEdit="true" default-expand-all="true"></tu-tree>
             </el-col>
-            <el-col :span="10" :offset="5">
+            <el-col :span="10" :offset="4">
                 <el-form :model="formAlignLeft" label-position="left" label-width="80px" class="layout form">
                     <el-input v-model="formAlignLeft.id" style="display:none"></el-input>
                     <el-form-item label="上级节点" size="small">
