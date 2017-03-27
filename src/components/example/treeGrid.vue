@@ -30,7 +30,7 @@
                     </el-button-group>
                 </div>
                 <div class="grid">
-                    <el-table :data="gridData" border stripe style="width: 100%; height: 100%;" height="'100%'">
+                    <el-table :data="gridData" border stripe height="'100%'">
                         <el-table-column type="index" width="80">
                         </el-table-column>
                         <el-table-column prop="UserName" label="用户名">
