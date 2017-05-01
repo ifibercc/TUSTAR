@@ -39,7 +39,7 @@ module.exports = {
         noInfo: true,
         port: 8888,
         proxy: {
-            "/api": "http://122.114.38.213:3456",
+            "/api": "http://122.114.38.213",
             "/mock": "http://localhost:8888"
         }
     },
